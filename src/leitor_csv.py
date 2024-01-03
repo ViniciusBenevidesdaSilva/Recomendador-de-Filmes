@@ -5,7 +5,7 @@ import pandas as pd
 caminho_filmes = os.path.join(os.getcwd(), 'data', 'filmes.csv')
 
 
-def cria_arquivos_filmes_csv():
+def cria_arquivo_filmes_csv():
     with open(caminho_filmes, 'w', newline='', encoding='utf-8-sig') as csvfile:
         fieldnames = ['ID', 'Título', 'URL do Poster', 'Gênero', 'Coleção', 'Diretor', 'Língua Original', 'Resumo',
                       'Popularidade', 'Produtora', 'País', 'Data de Lançamento', 'Orçamento', 'Receita', 'Duração',

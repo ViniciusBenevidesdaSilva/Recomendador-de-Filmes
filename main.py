@@ -1,3 +1,4 @@
-from src.clusterizacao import gera_clusters_filmes
+from src.api_filmes import importa_filmes_para_csv
 
-gera_clusters_filmes()
+importa_filmes_para_csv(pagina_inicial=1, pagina_final=3)
+
