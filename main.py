@@ -1,4 +1,11 @@
-from src.api_filmes import importa_filmes_para_csv
+from src.recomendador import Recomendador
 
-importa_filmes_para_csv(pagina_inicial=1, pagina_final=3)
+filmes = Recomendador().retorna_recomendacoes(filme="O Iluminado")
 
+print('Recomendações Detalhadas:\n')
+
+for index, row in filmes.iterrows():
+    print(f'Título: {row["Título"]}')
+    print(f'Gênero: {row["Gênero"]}')
+    print(f'Ano de Lançamento: {row["Data de Lançamento"].year}')
+    print('------------------------------')
