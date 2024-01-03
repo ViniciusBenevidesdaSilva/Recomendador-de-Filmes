@@ -30,3 +30,8 @@ def salvar_filmes_csv(filmes):
 def obtem_dados_arquivo_csv(nome_arquivo='filmes.csv'):
     caminho = os.path.join(os.getcwd(), 'data', nome_arquivo)
     return pd.read_csv(caminho, sep=';')
+
+
+def salvar_data_frame(data_frame, nome_arquivo):
+    caminho = os.path.join(os.getcwd(), 'data', nome_arquivo)
+    data_frame.to_csv(caminho, index=False, sep=';', encoding='utf-8-sig')
