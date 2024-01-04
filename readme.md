@@ -36,10 +36,10 @@ Com essa divisão, utilizando a distância euclidiana entre os pontos, fez-se po
 Por fim, foi criada uma interface utilizando o framework **flask** para que o usuário possa interagir com o sistema, pesquisando por filmes e vendo as sugestões obtidas!
 
 ### Recomendações para o filme De Volta para o Futuro 2 :car:
-![Recomendações para o filme De Volta para o Futuro 2](imgs\recomendacoes-de-volta-para-o-futuro.png)
+![Recomendações para o filme De Volta para o Futuro 2](imgs/recomendacoes-de-volta-para-o-futuro.png)
 
 ### Recomendações para o filme O Castelo Animado :european_castle:
-![Recomendações para o filme O Castelo Animado](imgs\recomendacoes-castelo-animado.png)
+![Recomendações para o filme O Castelo Animado](imgs/recomendacoes-castelo-animado.png)
 
 ### Recomendações para o filme Corra! :runner:
-![Recomendações para o filme Corra!](imgs\recomendacoes-corra.png)
+![Recomendações para o filme Corra!](imgs/recomendacoes-corra.png)
