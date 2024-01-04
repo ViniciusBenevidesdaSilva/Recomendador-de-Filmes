@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recomendação de Filmes</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/index.css') }}">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="../static/js/index.js"></script>
+
+</head>
+<body>
+    <h1>Recomendação de Filmes</h1>
+
+    <form method="post">
+        <label for="titulo_filme">Digite o título do filme:</label>
+        {% if titulo_filme %}
+                <input type="text" id="titulo_filme" name="titulo_filme" value="{{ titulo_filme }}" required>
+        {% else %}
+                <input type="text" id="titulo_filme" name="titulo_filme" required>
+        {% endif %}
+        <select id="sugestoes" style="display: none;"></select>
+        <button type="submit">Buscar Recomendações</button>
+    </form>
+
+    <br/>
+
+    {% if erro %}
+        <div class="erro">
+            <h3>Erro</h3>
+            <p>Não foi possível encontrar recomendações para "{{ titulo_filme }}".</p>
+            <code>{{ erro }}</code>
+        </div>
+
+    {% else %}
+        {% if titulo_filme %}
+            <h2>Recomendações para "{{ titulo_filme }}"</h2>
+                <ul>
+                    {% for index, row in recomendacoes.iterrows() %}
+                        <li>
+                            <strong>{{ row['Título'] }}</strong> -
+                            {{ row['Gênero'] }} ({{ row['Data de Lançamento'].year }})
+                            <br>
+                            <a href="{{ url_for('recomendacoes', filme=row['Título']) }}">
+                                <img src="{{ row['URL do Poster'] }}" alt="Poster do filme {{ row['Título'] }}">
+                            </a>
+                        </li>
+                    {% endfor %}
+                </ul>
+        {% endif %}
+    {% endif %}
+
+</body>
+</html>
